@@ -1,0 +1,10 @@
+const express=require('express')
+const {createCategory,getcategoryShop,getAllCategory,addCity,addState}=require('../controllers/category')
+const {isAuthenticate,isAdim}=require('../middleware/middleware')
+const router=express.Router()
+router.post('/createcategory',isAuthenticate,isAdim,createCategory)
+router.get('/getcategoryshops/:id',isAuthenticate,getcategoryShop)
+router.get('/getallcategory',isAuthenticate,getAllCategory)
+router.post('/addstate',isAuthenticate,isAdim,addState)
+router.post('/addcity',isAuthenticate,isAdim,addCity)
+module.exports=router
